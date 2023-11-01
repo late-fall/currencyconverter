@@ -4,28 +4,22 @@
     --lightblue: #385170;
     --navy: #142d4c;
 }
-
 body {
     background-color: var(--white);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
 h1 {
     color: var(--white);
 }
-
 p {
     margin: 0;
     font-size: 15px;
     margin-bottom: 2px;
     color: var(--lightblue);
 }
-
-
 .fromto {
     display: flex;
 }
-
 .container {
     padding: 20px;
     border-radius: 5px;
@@ -37,7 +31,6 @@ p {
     margin: 0 auto;
     margin-top: 40px;
 }
-
 select {
     background-color: var(--lightblue);
     color: var(--white);
@@ -52,12 +45,9 @@ select {
     margin-bottom: 10px;
     border-radius: 5px;
 }
-
-
 .amount__input {
     width: 250px;
 }
-
 input {
     background-color: var(--lightblue);
     color: var(--white);
@@ -73,29 +63,24 @@ input {
     margin-bottom: 10px;
     border-radius: 5px;
 }
-
 input:hover {
     color: var(--green);
 }
-
 ::placeholder {
     color: var(--white);
     opacity: 60%;
 }
-
 #result {
     font-size: 20px;
     color: var(--green);
     margin-bottom: 25px;
 }
-
 a {
     text-decoration: none;
     text-align: center;
     font-size: 13px;
     color: var(--lightblue);
 }
-
 a:hover {
     color: var(--white);
 }

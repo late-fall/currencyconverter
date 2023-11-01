@@ -4,9 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currency Converter</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --white: #ececec;
+            --green: #9fd3c7;
+            --lightblue: #385170;
+            --navy: #142d4c;
+        }
+        body {
+            background-color: var(--white);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        h1 {
+            color: var(--white);
+        }
+        p {
+            margin: 0;
+            font-size: 15px;
+            margin-bottom: 2px;
+            color: var(--lightblue);
+        }
+        .fromto {
+            display: flex;
+        }
+        .container {
+            padding: 20px;
+            border-radius: 5px;
+            background-color: var(--navy);
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+            margin-top: 40px;
+        }
+        select {
+            background-color: var(--lightblue);
+            color: var(--white);
+            padding: 7px;
+            width: 250px;
+            border: none;
+            font-size: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+            -webkit-appearance: button;
+            appearance: button;
+            outline: none;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .amount__input {
+            width: 250px;
+        }
+        input {
+            background-color: var(--lightblue);
+            color: var(--white);
+            padding: 7px;
+            box-sizing: border-box;
+            border: none;
+            width: 100%;
+            font-size: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+            -webkit-appearance: button;
+            appearance: button;
+            outline: none;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        input:hover {
+            color: var(--green);
+        }
+        ::placeholder {
+            color: var(--white);
+            opacity: 60%;
+        }
+        #result {
+            font-size: 20px;
+            color: var(--green);
+            margin-bottom: 25px;
+        }
+        a {
+            text-decoration: none;
+            text-align: center;
+            font-size: 13px;
+            color: var(--lightblue);
+        }
+        a:hover {
+            color: var(--white);
+        }
+    </style>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -54,5 +140,45 @@
         <a href="https://www.exchangerate-api.com" target="_blank">Rates By Exchange Rate API</a>
         <a href="https://github.com/late-fall" target="_blank">Created by S Lee <i class="fa fa-github fa_custom"></i></a>
     </div>
+    
+    <script>
+        let baseurl = 'https://open.er-api.com/v6/latest/'
+
+        let amount = document.getElementById('amount')
+        let from = document.getElementById('from')
+        let to = document.getElementById('to')
+        let result = document.getElementById('result')
+
+        function getRates() {
+            from = document.getElementById('from')
+            url = baseurl + from.value
+            return fetch(url)
+            .then((data) => data.json())
+            .then((json) => json.rates)
+        }
+
+        function getResult() {
+            getRates().then(() => {
+                amount.addEventListener('input', display)
+                from.addEventListener('change', display)
+                to.addEventListener('change', display)
+            })
+        }
+
+        function display() {
+            getRates().then((rates) => {
+                from = document.getElementById('from')
+                to = document.getElementById('to')
+                amount = document.getElementById('amount')
+                converted = Number(amount.value) * rates[to.value]
+                if (amount.value != ''){
+                    result.innerHTML = Number(amount.value).toLocaleString() + ' ' + from.value 
+                    + ' is ' + Number(converted.toFixed(2)).toLocaleString() + ' ' + to.value
+                }
+            
+            })
+        }
+        getResult()
+    </script>
 </body>
 </html>
