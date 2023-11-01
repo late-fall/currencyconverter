@@ -28,8 +28,8 @@ function display() {
         amount = document.getElementById('amount')
         converted = Number(amount.value) * rates[to.value]
         if (amount.value != ''){
-            result.innerHTML = amount.value.toLocaleString() + ' ' + from.value 
-            + ' is ' + Number(converted.toFixed(2)).toLocaleString() + ' ' + to.value +'.'
+            result.innerHTML = Number(amount.value).toLocaleString() + ' ' + from.value 
+            + ' is ' + Number(converted.toFixed(2)).toLocaleString() + ' ' + to.value
         }
        
     })
