@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Currency Converter 💰</h1>
+        <div class="from">
+            <p>From</p>
+            <select name="from" id="from">
+                <option value="USD">USD - United States Dollar</option>
+                <option value="CAD">CAD - Canadian Dollar</option>
+                <option value="GBP">GBP - Pound Sterling</option>
+                <option value="EUR">EUR - Euro</option>
+                <option value="JPY">JPY - Japanese Yen</option>
+                <option value="AUD">AUD - Austrailian Dollar</option>
+                <option value="CHF">CHF - Swiss Franc</option>
+                <option value="CNY">CNY - Chinese Renminbi</option>
+                <option value="HKD">HKD - Hong Kong Dollar</option>
+                <option value="KRW">KRW - Korean Won</option>
+            </select>
+        </div>
+        <div class="to">
+            <p>To</p>
+            <select name="to" id="to">
+                <option value="USD">USD - United States Dollar</option>
+                <option value="CAD">CAD - Canadian Dollar</option>
+                <option value="GBP">GBP - Pound Sterling</option>
+                <option value="EUR">EUR - Euro</option>
+                <option value="JPY">JPY - Japanese Yen</option>
+                <option value="AUD">AUD - Austrailian Dollar</option>
+                <option value="CHF">CHF - Swiss Franc</option>
+                <option value="CNY">CNY - Chinese Renminbi</option>
+                <option value="HKD">HKD - Hong Kong Dollar</option>
+                <option value="KRW">KRW - Korean Won</option>
+            </select>
+        </div>
+        <div class="amount__input">
+            <p>Amount to Convert</p>
+            <input type="number" id="amount" placeholder="Enter amount">
+        </div>
+        <!-- <div class="switch">
+            <input type="checkbox" id="switch">
+        </div> -->
+        <div class="result">
+            <p id="result"></p>
+        </div>
+        <a href="https://www.exchangerate-api.com" target="_blank">Rates By Exchange Rate API</a>
+        <a href="https://github.com/late-fall" target="_blank">Created by S Lee <i class="fa fa-github fa_custom"></i></a>
+    </div>
+</body>
+</html>

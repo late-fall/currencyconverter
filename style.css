@@ -1,0 +1,101 @@
+:root {
+    --white: #ececec;
+    --green: #9fd3c7;
+    --lightblue: #385170;
+    --navy: #142d4c;
+}
+
+body {
+    background-color: var(--white);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+    color: var(--white);
+}
+
+p {
+    margin: 0;
+    font-size: 15px;
+    margin-bottom: 2px;
+    color: var(--lightblue);
+}
+
+
+.fromto {
+    display: flex;
+}
+
+.container {
+    padding: 20px;
+    border-radius: 5px;
+    background-color: var(--navy);
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+select {
+    background-color: var(--lightblue);
+    color: var(--white);
+    padding: 7px;
+    width: 250px;
+    border: none;
+    font-size: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+
+.amount__input {
+    width: 250px;
+}
+
+input {
+    background-color: var(--lightblue);
+    color: var(--white);
+    padding: 7px;
+    box-sizing: border-box;
+    border: none;
+    width: 100%;
+    font-size: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+input:hover {
+    color: var(--green);
+}
+
+::placeholder {
+    color: var(--white);
+    opacity: 60%;
+}
+
+#result {
+    font-size: 20px;
+    color: var(--green);
+    margin-bottom: 25px;
+}
+
+a {
+    text-decoration: none;
+    text-align: center;
+    font-size: 13px;
+    color: var(--lightblue);
+}
+
+a:hover {
+    color: var(--white);
+}
