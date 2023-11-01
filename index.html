@@ -14,8 +14,6 @@
         body {
             background-color: var(--white);
             font-family: Verdana, Geneva, Tahoma, sans-serif;
-        }
-        h1 {
             color: var(--white);
         }
         p {
@@ -23,9 +21,6 @@
             font-size: 15px;
             margin-bottom: 2px;
             color: var(--lightblue);
-        }
-        .fromto {
-            display: flex;
         }
         .container {
             padding: 20px;
@@ -38,7 +33,7 @@
             margin: 0 auto;
             margin-top: 40px;
         }
-        select {
+        select, input {
             background-color: var(--lightblue);
             color: var(--white);
             padding: 7px;
@@ -51,27 +46,9 @@
             outline: none;
             margin-bottom: 10px;
             border-radius: 5px;
-        }
-        .amount__input {
-            width: 250px;
         }
         input {
-            background-color: var(--lightblue);
-            color: var(--white);
-            padding: 7px;
             box-sizing: border-box;
-            border: none;
-            width: 100%;
-            font-size: 15px;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
-            -webkit-appearance: button;
-            appearance: button;
-            outline: none;
-            margin-bottom: 10px;
-            border-radius: 5px;
-        }
-        input:hover {
-            color: var(--green);
         }
         ::placeholder {
             color: var(--white);
@@ -127,20 +104,14 @@
                 <option value="KRW">KRW - Korean Won</option>
             </select>
         </div>
-        <div class="amount__input">
+        <div>
             <p>Amount to Convert</p>
             <input type="number" id="amount" placeholder="Enter amount">
         </div>
-        <!-- <div class="switch">
-            <input type="checkbox" id="switch">
-        </div> -->
-        <div class="result">
-            <p id="result"></p>
-        </div>
+        <p id="result"></p>
         <a href="https://www.exchangerate-api.com" target="_blank">Rates By Exchange Rate API</a>
         <a href="https://github.com/late-fall" target="_blank">Created by S Lee <i class="fa fa-github fa_custom"></i></a>
     </div>
-    
     <script>
         let baseurl = 'https://open.er-api.com/v6/latest/'
 
@@ -175,7 +146,6 @@
                     result.innerHTML = Number(amount.value).toLocaleString() + ' ' + from.value 
                     + ' is ' + Number(converted.toFixed(2)).toLocaleString() + ' ' + to.value
                 }
-            
             })
         }
         getResult()
