@@ -6,26 +6,30 @@
     <title>Currency Converter</title>
     <style>
         :root {
-            --white: #ececec;
+            --text: #555555; /* Gray */
+--secondarybg: #E8E8E8; /* Platinum */
+--primarybg: #2C3E50; /* Dark Slate Blue */
             --green: #9fd3c7;
-            --lightblue: #385170;
-            --navy: #142d4c;
+        }
+        h1 {
+            color: white;
         }
         body {
-            background-color: var(--white);
+            background-color: var(--primarybg);
             font-family: Verdana, Geneva, Tahoma, sans-serif;
-            color: var(--white);
+            color: var(--text);
         }
         p {
             margin: 0;
             font-size: 15px;
             margin-bottom: 2px;
-            color: var(--lightblue);
+            color: var(--secondarybg);
         }
         .container {
             padding: 20px;
+            border: 4px solid rgb(0,0,0,0.6);
             border-radius: 5px;
-            background-color: var(--navy);
+            background-color: var(--primarybg);
             width: 500px;
             display: flex;
             flex-direction: column;
@@ -34,8 +38,8 @@
             margin-top: 40px;
         }
         select, input {
-            background-color: var(--lightblue);
-            color: var(--white);
+            background-color: var(--secondarybg);
+            color: var(--000000);
             padding: 7px;
             width: 250px;
             border: none;
@@ -51,7 +55,7 @@
             box-sizing: border-box;
         }
         ::placeholder {
-            color: var(--white);
+            color: var(--000000);
             opacity: 60%;
         }
         #result {
@@ -63,10 +67,10 @@
             text-decoration: none;
             text-align: center;
             font-size: 13px;
-            color: var(--lightblue);
+            color: var(--secondarybg);
         }
         a:hover {
-            color: var(--white);
+            color: var(--000000);
         }
     </style>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
